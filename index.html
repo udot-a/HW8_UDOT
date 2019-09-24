@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>HW8_UDOT</title>
+</head>
+
+<body class="wrapper">
+    <div class="block-scheme">
+        <h1>Required</h1>
+        <div id="required">
+            <p>Введите длительность отображения времени(1-100 сек.):</p>
+            <input type="input" id='input'>
+            <button id='setPeriod'>Включить время</button>
+        </div>
+    </div>
+    <div class="block-scheme">
+        <h1>Additional</h1>
+        <div id="additonalOne">
+            <p>Введите строку для посимвольного вывода:</p>
+            <input type="input" id='outputStr'>
+            <button id = 'typeSymb'>Посимвольный вывод</button>
+        </div>
+    </div>
+    <div class="block-scheme">
+        <h1>Additional #2</h1>
+        <pre>
+                User.prototype.counter = (()=>{
+                    var count = 0;
+                    return ()=> ++ count;
+                  })()
+                  
+                  function User ( name ) {
+                      this.name = name
+                      this.id = this.counter()
+                  }
+                  var users = [
+                      new User ( "Семен" ),
+                      new User ( "Антон" ),
+                      new User ( "Демьян" ),
+                      new User ( "Василий" )
+                  ]
+                  
+                  console.log(users)
+                  
+        </pre>
+    </div>
+
+    <script src="./hw8.js"></script>
+</body>
+
+</html>
