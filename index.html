@@ -30,23 +30,29 @@
     <div class="block-scheme">
         <h1>Additional #2</h1>
         <pre>
-                User.prototype.counter = (()=>{
-                    var count = 0;
-                    return ()=> ++ count;
-                  })()
-                  
-                  function User ( name ) {
-                      this.name = name
-                      this.id = this.counter()
-                  }
-                  var users = [
-                      new User ( "Семен" ),
-                      new User ( "Антон" ),
-                      new User ( "Демьян" ),
-                      new User ( "Василий" )
-                  ]
-                  
-                  console.log(users)
+            function User ( name ) {
+                this.name = name
+                this.id = this.counter()
+            }
+            User.prototype.counter = (function(){
+                var count = 0;
+                return function() {
+                  if (this.id) return this.id
+                  return  ++ count;}
+            })()
+            
+            var users = [
+                new User ( "Семен" ),
+                new User ( "Антон" ),
+                new User ( "Демьян" ),
+                new User ( "Василий" ),
+                new User ( "Петр" )
+            ]
+            
+            console.log(users)
+            
+            console.log(`users[2].id: ${users[2].id} , users[2].counter():${users[2].counter()}`) 
+            
                   
         </pre>
     </div>
